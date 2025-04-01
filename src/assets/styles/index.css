@@ -1,0 +1,120 @@
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+}
+
+.app-container {
+  background-color: #f4f7f9;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+/* Alerts Styles */
+.alert-high, .alert-urgent {
+  border-left: 5px solid var(--danger);
+}
+
+.alert-medium {
+  border-left: 5px solid var(--warning);
+}
+
+.alert-low {
+  border-left: 5px solid var(--info);
+}
+
+/* Rating Stars */
+.rating-stars {
+  color: #ffc107;
+  font-size: 1.25rem;
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  padding: 10px 12px;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Leader Dashboard */
+.dashboard-stat-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.dashboard-stat-card .icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.2;
+  font-size: 3rem;
+}
+
+/* Authentication pages */
+.auth-form-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.auth-form-container h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 20px 0;
+  margin-top: auto;
+}
