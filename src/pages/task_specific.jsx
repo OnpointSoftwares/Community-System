@@ -32,15 +32,8 @@ const TaskList = () => {
       if (filters.status) queryParams += `status=${filters.status}&`;
       if (filters.priority) queryParams += `priority=${filters.priority}&`;
       if (filters.category) queryParams += `category=${filters.category}&`;
-  
-      // Only fetch tasks assigned to the user if their role is 'household'
-      if (user.role === 'household') {
-        queryParams += `assignedTo=${user.household}&`;
-      }
-  
-      const response = await axios.get(`/api/tasks`,
-        {params: {household: user.household}}
-      );
+      
+      const response = await axios.get(`/api/tasks?${queryParams}`);
       setTasks(response.data.data);
       setLoading(false);
     } catch (err) {
@@ -48,7 +41,6 @@ const TaskList = () => {
       setLoading(false);
     }
   };
-  
 
   const applyFilters = () => {
     fetchTasks();
@@ -67,7 +59,7 @@ const TaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      await axios.put(`/ap members: req.user.id i/tasks/${taskId}`, { status: newStatus });
+      await axios.put(`/api/tasks/${taskId}`, { status: newStatus });
       fetchTasks(); // Refresh the list
     } catch (err) {
       setError('Error updating task status: ' + (err.response?.data?.message || err.message));
@@ -269,7 +261,7 @@ const TaskList = () => {
                 <div className="task-meta">
                   <div className="task-meta-item">
                     <span className="meta-label">Assigned To:</span>
-                    <span className="meta-value">{task.assignedTo?.name || 'Unknown'}</span>
+                    <span className="meta-value">{task.assignedTo|| 'Unknown'}</span>
                   </div>
                   <div className="task-meta-item">
                     <span className="meta-label">Due Date:</span>

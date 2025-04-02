@@ -48,17 +48,17 @@ const Header = () => {
                     Dashboard
                   </Nav.Link>
                 )}
-
+                {user.role === 'admin'||user.role === 'leader' && (
                 <Nav.Link as={NavLink} to="/households" className="mx-2">
                   <FontAwesomeIcon icon={faUsers} className="me-2" />
                   Households
                 </Nav.Link>
-
+                )}
                 <Nav.Link as={NavLink} to="/alerts" className="mx-2">
                   <FontAwesomeIcon icon={faBell} className="me-2" />
                   Alerts
                 </Nav.Link>
-
+               
                 <Dropdown as={Nav.Item} className="ms-2">
                   <Dropdown.Toggle as={Nav.Link} className="d-flex align-items-center p-0 bg-transparent border-0">
                     <div className="d-flex align-items-center justify-content-center rounded-circle bg-gradient-primary text-white"

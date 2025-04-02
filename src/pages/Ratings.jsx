@@ -66,7 +66,7 @@ const Ratings = () => {
         
         // For household users, only show their ratings
         if (user.role === 'household') {
-          params.push(`household=${user.householdId}`);
+          params.push(`household=${user.household}`);
         }
         
         // Add sorting
